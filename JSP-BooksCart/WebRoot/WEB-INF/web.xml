@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>JSP-BooksCart</display-name>
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.yiki.Servlet.loginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>bookServlet</servlet-name>
+    <servlet-class>com.yiki.Servlet.bookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>orderServlet</servlet-name>
+    <servlet-class>com.yiki.Servlet.orderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>manergerServlet</servlet-name>
+    <servlet-class>com.yiki.Servlet.manergerServlet</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/servlet/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>bookServlet</servlet-name>
+    <url-pattern>/servlet/bookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>orderServlet</servlet-name>
+    <url-pattern>/servlet/orderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>manergerServlet</servlet-name>
+    <url-pattern>/servlet/manergerServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+    <filter>
+        <filter-name>manergFilter</filter-name>
+        <filter-class>com.yiki.filter.manergFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>manergFilter</filter-name>
+        <url-pattern>/Admin/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.yiki.filter.loginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/JSP/*</url-pattern>
+    </filter-mapping>
+</web-app>
